@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
 
   allowNewServer = false;
+  serverCreationStatus = 'Nenhum servidor criado!';
+  serverName = 'valor inicial';
 
   constructor() {
     setTimeout(() => {
@@ -20,4 +22,15 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onCreateServer(){
+    this.serverCreationStatus = 'Servidor foi criado';
+    setTimeout(() => {
+      this.serverCreationStatus = '';
+    }, 2000);
+  }
+
+  onUpdateServerName(event: any){
+    console.log(event.target.value);
+    this.serverName = event.target.value;
+  }
 }
