@@ -4,6 +4,13 @@
 <hr>
 <p>{{serverName}}</p>
 <hr>
+<button class="btn btn-primary"
+        [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<!--<p [innerText]="allowNewServer"></p>-->
+<hr>
+<p>{{serverCreationStatus}}</p>
+<p *ngIf="serverCreated">Servidor foi criado</p>
+<hr>
 <label>Nome de usuário</label>
 <input type="text" class="form-control" [(ngModel)]="username">
 <hr>
@@ -12,9 +19,5 @@
 <button class="btn btn-primary"
         [disabled]="username==''" (click)="username=''">Resetar campo</button>
 <hr>
-<button class="btn btn-primary"
-        [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-<!--<p [innerText]="allowNewServer"></p>-->
-<hr>
-<p>{{serverCreationStatus}}</p>
+
 
