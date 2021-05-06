@@ -9,7 +9,13 @@
 <!--<p [innerText]="allowNewServer"></p>-->
 <hr>
 <p>{{serverCreationStatus}}</p>
-<p *ngIf="serverCreated">Servidor foi criado</p>
+<p *ngIf="serverCreated; else noServer">Servidor foi criado</p>
+<ng-template #noServer>
+  <p>
+    Servidor não foi criado
+  </p>
+</ng-template>
+
 <hr>
 <label>Nome de usuário</label>
 <input type="text" class="form-control" [(ngModel)]="username">
