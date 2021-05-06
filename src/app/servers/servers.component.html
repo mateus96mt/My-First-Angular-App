@@ -8,6 +8,8 @@
         [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <!--<p [innerText]="allowNewServer"></p>-->
 <hr>
+<app-server *ngFor="let server of servers"></app-server>
+<hr>
 <p>{{serverCreationStatus}}</p>
 <p *ngIf="serverCreated; else noServer">Servidor foi criado</p>
 <ng-template #noServer>
@@ -26,10 +28,5 @@
         [disabled]="username==''" (click)="username=''">Resetar campo</button>
 <hr>
 
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+
 
