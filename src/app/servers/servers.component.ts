@@ -15,6 +15,10 @@ export class ServersComponent implements OnInit {
   username = '';
   serverCreated = false;
   servers = ['server 1', 'server 2'];
+  showContent = false;
+  contentButtonText = 'Mostrar conteúdo';
+  numberOfShowOrHideContentClicks = 0;
+  clicks = [];
 
   constructor() {
     setTimeout(() => {
@@ -37,5 +41,16 @@ export class ServersComponent implements OnInit {
   onUpdateServerName(event: any){
     console.log(event.target.value);
     this.serverName = event.target.value;
+  }
+
+  changeContent(){
+    this.numberOfShowOrHideContentClicks++;
+    this.showContent = !this.showContent;
+    this.contentButtonText = this.showContent ? 'Esconder conteúdo' : 'Mostrar conteúdo';
+    this.clicks.push(this.numberOfShowOrHideContentClicks);
+  }
+
+  getContentColor(index){
+    return index >= 5 ? 'red' : 'white';
   }
 }
