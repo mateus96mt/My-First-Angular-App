@@ -47,7 +47,7 @@ export class ServersComponent implements OnInit {
     this.numberOfShowOrHideContentClicks++;
     this.showContent = !this.showContent;
     this.contentButtonText = this.showContent ? 'Esconder conteúdo' : 'Mostrar conteúdo';
-    this.clicks.push(this.numberOfShowOrHideContentClicks);
+    this.clicks.push(new Date());
   }
 
   getContentColor(index){

@@ -35,6 +35,7 @@
 <hr>
 <p *ngIf="showContent">Conteúdo</p>
 <hr>
-<p *ngFor="let click of clicks" [ngStyle]="{backgroundColor: getContentColor(click)}">Click de número {{click}}</p>
+<p *ngFor="let click of clicks; let i = index" [ngStyle]="{backgroundColor: getContentColor(i),
+color: getContentColor(i)=='red' ? 'white' : 'black'}">Click de número {{i}}</p>
 
 
