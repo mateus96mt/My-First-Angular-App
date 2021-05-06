@@ -4,6 +4,14 @@
 <hr>
 <p>{{serverName}}</p>
 <hr>
+<label>Nome de usuário</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+<hr>
+<p>{{username}}</p>
+<hr>
+<button class="btn btn-primary"
+        [disabled]="username==''" (click)="username=''">Resetar campo</button>
+<hr>
 <button class="btn btn-primary"
         [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <!--<p [innerText]="allowNewServer"></p>-->
